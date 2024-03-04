@@ -15,10 +15,6 @@ protected:
     MockDependency mock{};
 };
 
-TEST(test_simple_thing, simeple_thing) {
-    ASSERT_TRUE(1);
-}
-
 TEST_F(TestLinkTimeMock, test_get_special_int) {
     EXPECT_CALL(mock, Dependency(_));
     EXPECT_CALL(mock, getSpecialInt()).WillOnce(Return(72));
@@ -36,3 +32,4 @@ TEST_F(TestLinkTimeMock, test_get_special_string) {
     auto result{sut.printCoolStuff()};
     EXPECT_EQ(result, std::string("WOW 94"));
 }
+
